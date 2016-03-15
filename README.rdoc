@@ -1,28 +1,36 @@
-== README
+== March 2016 code challenge for the "Complete Ruby on Rails Developer Course"
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+http://uploads.strikinglycdn.com/static/backgrounds/things/113.jpg
 
-Things you may want to cover:
+===Summary
 
-* Ruby version
+March code challenge is a group challenge, for groups of up to 3 members from the Complete Ruby on Rails Developer course.
 
-* System dependencies
+The group will *launch* *a* *startup* but it will require the following:
 
-* Configuration
+1) A landing page (this has to look good) where you build a site (front-end only) of your web apps that your start-up has/will build for marketing purposes. This needs to be a nicely designed page or combo of pages combining your HTML/CSS/Javascript prowess, or an ability to find a good template service (I use strikingly.com). This site should have the following:
+- About us page - to share information about your startup
+- Home page - what your startup is about, what it does, preferably some detail on what your apps are about
+- Products page - this will list the web apps you will build in the project
 
-* Database creation
+2) *2* *web* *apps* *at* *a* *minimum* *as* *products!* - You are welcome to build 3 if you like but the project requires you to build two usable web apps that you can market on your startup's site, deployed to heroku (or any other production hosting service) so people can actually view/use them. They need to have responsive styling so users can access them from their mobile devices as well.
 
-* Database initialization
+*a)* *Task* *Tracker* - People may find it difficult to manage the daily tasks/to-do's without having a virtual (or real) assistant, your startup aims to solve this problem and build a task tracker. The features of this web app will be:
+- landing page which will require sign-up
+- an image for the web app, including thumbnail you can paste in places (should definitely be accessible from your startup's homepage
+- sign-up will require email and email authentication, you can use devise for this
+- my tasks page - listing of tasks that you have entered - I leave the details to you but should definitely include an ability to add new tasks, delete tasks, task details with completion date. 
+- today's task listing - this will display the tasks that have the completion date on the current date and have not been completed yet, and it will have a checkbox for completion, once this is checked it will move the task to completed tasks and won't display here. There should be a button for all tasks for the day which will show the completed tasks as well
+- weekly tasks listing - this will display all the tasks that are pending and completed for the rest of the week (so upto 7 days in the future). There should be buttons for displaying either all tasks (including pending and completed) or just pending tasks in this page
 
-* How to run the test suite
+*AND*
 
-* Services (job queues, cache servers, search engines, etc.)
+*b)* *Workout* *Tracker* - Following features are necessary:
+- Users need to sign-up and login/logout (no email authentication necessary)
+- They will need ability to search for friends by email address or username. If they find friends, they can add them to their friends list. The friend who has been added will also find the user who added them in their friends list (both -ways). Bonus - Add an accept option so the friend isn't automatically added but is added once the requested friend accepts this request
+- Build a my workouts page where the user can add planned workouts for the next week. 
+- Build a friend's workouts page where the user can view friends workout listings and click on their friend to view their workouts
+- As user completes a workout for the week, they can click on a checkbox and that workout shows as completed. As the week ends, a percentage calculation is done on the workouts completed vs. the workouts planned. At the end of the week there is a summary page
+- Build a summary page - this lists your own percentage completion for the week (completed vs planned) and lists all the friends percentage completion for the week (completed vs planned)
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+That's it! a marketing site and two web apps
