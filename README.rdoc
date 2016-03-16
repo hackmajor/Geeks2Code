@@ -36,5 +36,9 @@ The group will *launch* *a* *startup* but it will require the following:
 <<<<<<< HEAD
 That's it! a marketing site and two web apps
 =======
+<<<<<<< HEAD
+That's it! a marketing site and two web apps
+=======
 That's it! a marketing site and two web apps
 >>>>>>> master
+>>>>>>> hackmajor-master
