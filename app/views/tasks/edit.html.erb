@@ -1,6 +1,27 @@
-<h1>Editing Task</h1>
+<div class="well col-xs-8 col-xs-offset-2">
+  <table class="table table-bordered">
+    <tr>
+      <td align="center">
+        <h1>Edit Task</h1>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= render 'form' %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Complete?:</strong>&nbsp;&nbsp;<%= @task.status %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to 'Back', tasks_path, class: "btn btn-success" %>
+      </td>
+    </tr>
+  </table>
+</div>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+
