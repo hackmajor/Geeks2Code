@@ -5,15 +5,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: true, length: { minimum: 3}
-
   # Only allow letter, number, underscore and punctuation for the user name.
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
-
   validates :username, presence: true, length: { minimum: 3, maximum: 20}, :uniqueness => { :case_sensitive => false }
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
+
+  has_many :tasks, dependent: :destroy
 
   #permit users login with username
 
