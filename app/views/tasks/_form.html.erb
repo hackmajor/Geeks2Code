@@ -11,15 +11,18 @@
     </div>
   <% end %>
 
+<div class="container">
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name, "Task Description" %><br><br>
+    <%= f.text_field :name, class: "input-lg col-md-8" %><br><br><br>
   </div>
   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.check_box :status %>
+    <%= f.label :status, "Check if the task has been completed:" %><br>
+    <%= f.check_box :status %><br><br><br><br>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions btn btn-lg">
+    <center><%= f.submit %></center>
   </div>
+</div>
 <% end %>
+
