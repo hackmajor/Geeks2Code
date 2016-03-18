@@ -23,7 +23,15 @@
       <% @tasks.each do |task| %>
         <tr>
           <td><%= link_to task.name, task %></td>
-          <td><%= task.status %></td>
+          <% if task.status == false %>
+          <td>
+            not completed
+          </td>
+          <% else %>
+          <td>
+            Completed!
+          </td>
+          <% end %>
           <td><%= task.completition_date %></td>
           <td><%= link_to 'Edit', edit_task_path(task), class: "btn btn-info" %></td>
           <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
