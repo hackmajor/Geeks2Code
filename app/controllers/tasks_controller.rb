@@ -59,7 +59,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :status)
+      params.require(:task).permit(:name, :status, :completition_date)
     end
 
     def check_user

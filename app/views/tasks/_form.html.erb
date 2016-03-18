@@ -20,9 +20,14 @@
     <%= f.label :status, "Check if the task has been completed:" %><br>
     <%= f.check_box :status %><br><br><br><br>
   </div>
+  <div class="field">
+      <%= f.label :completition_date %> <br>
+      <%= f.date_select(:completition_date, :order => [:month, :day, :year]) %>
+  </div>
+
+
   <div class="actions btn btn-lg">
     <center><%= f.submit %></center>
   </div>
 </div>
 <% end %>
-
