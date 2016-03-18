@@ -1,10 +1,14 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
+  before_action :check_user, only: [:show, :edit, :update, :destroy]
+
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.paginate(page: params[:page], per_page: 10)
+    
+    @tasks = current_user.tasks.paginate(page: params[:page], per_page: 10)
+
   end
 
   # GET /tasks/1
@@ -25,7 +29,7 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
-
+    @task.user = current_user
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
@@ -70,5 +74,12 @@ class TasksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
       params.require(:task).permit(:name, :status)
+    end
+
+    def check_user
+      if current_user != @task.user
+        flash[:danger] = "You can only edit or delete your own tasks"
+        redirect_to tasks_path
+      end
     end
 end

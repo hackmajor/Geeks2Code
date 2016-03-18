@@ -3,10 +3,11 @@
     <h4><%= t('.sign_in', :default => "Sign in") %></h4>
   </div>
   <div class="panel-body">
+    <p>Sign in with your username or password</p>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
       <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        <%= f.label :login %>
+        <%= f.text_field :login, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :password %>
