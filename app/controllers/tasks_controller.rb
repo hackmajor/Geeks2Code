@@ -7,6 +7,10 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks.paginate(page: params[:page], per_page: 10)
   end
 
+  def complete_task
+    @tasks = current_user.tasks.paginate(page: params[:page], per_page: 10)
+  end
+
 
   def show
   end
