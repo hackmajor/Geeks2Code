@@ -24,11 +24,11 @@
         <tr>
           <td><%= link_to task.name, task %></td>
           <% if task.status == false %>
-          <td>
-            not completed
+          <td class="danger">
+            Not Complete
           </td>
           <% else %>
-          <td>
+          <td class="success">
             Completed!
           </td>
           <% end %>
