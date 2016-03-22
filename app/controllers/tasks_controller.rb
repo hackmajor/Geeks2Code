@@ -15,6 +15,11 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks.paginate(page: params[:page], per_page: 10)
   end
 
+  def week_task
+    @tasks = Task.order(:due_date)
+      @task_months = @tasks.group_by {|t| t.due_date.beginning_of_week }
+  end
+
 
   def show
   end
@@ -67,7 +72,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :status, :completition_date)
+      params.require(:task).permit(:name, :status, :due_date)
     end
 
     def check_user
