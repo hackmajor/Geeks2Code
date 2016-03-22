@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="jumbotron">Completed Tasks</h1>
+<h1 class="jumbotron">Due Tasks</h1>
 
 <br><br>
 
@@ -19,7 +19,7 @@
     <tbody>
       <% @tasks.each do |task| %>
         <tr>
-          <% if task.status %>
+          <% if !task.status %>
             <td><%= link_to task.name, task %></td>
             <td>
               <%= task.completition_date %>

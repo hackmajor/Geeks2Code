@@ -11,6 +11,7 @@
         <% if user_signed_in? %>
           <li><%= link_to "Tasks", tasks_path %></li>
         <li><%= link_to "Complete Tasks", complete_task_path %></li>
+        <li><%= link_to "Tasks Due", due_path %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
