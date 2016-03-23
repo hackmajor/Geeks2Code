@@ -20,6 +20,11 @@ class TasksController < ApplicationController
     @task_months = @tasks.where('due_date >= ? AND due_date <= ? AND user_id = ?', Time.current.beginning_of_week, Time.current.end_of_week, current_user.id)
   end
 
+  def day_task
+    @tasks = Task.order(:due_date)
+    @task_months = @tasks.where('due_date >= ? AND due_date <= ? AND user_id = ?', Time.current.beginning_of_day, Time.current.end_of_day, current_user.id)
+  end
+
 
   def show
   end

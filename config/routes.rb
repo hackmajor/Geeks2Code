@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :tasks
   devise_for :users, :controllers => { registrations: 'registrations' }
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'complete_task' => 'tasks#complete_task'
   get 'due' => 'tasks#not_complete_task'
   get 'week' => 'tasks#week_task'
+  get 'today' => 'tasks#day_task'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
