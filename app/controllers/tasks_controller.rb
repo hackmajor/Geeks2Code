@@ -17,7 +17,7 @@ class TasksController < ApplicationController
 
   def week_task
     @tasks = Task.order(:due_date)
-      @task_months = @tasks.group_by {|t| t.due_date.beginning_of_week }
+    @task_months = @tasks.where('due_date >= ? AND due_date <= ? AND user_id = ?', Time.current.beginning_of_week, Time.current.end_of_week, current_user.id)
   end
 
 
