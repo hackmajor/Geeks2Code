@@ -8,11 +8,11 @@ class TasksController < ApplicationController
   end
 
   def complete_task
-    @tasks = current_user.tasks.paginate(page: params[:page], per_page: 10)
+    @tasks = current_user.tasks.where(status: true).paginate(page: params[:page], per_page: 10)
   end
 
   def not_complete_task
-    @tasks = current_user.tasks.paginate(page: params[:page], per_page: 10)
+    @tasks = current_user.tasks.where(status: false).paginate(page: params[:page], per_page: 10)
   end
 
   def week_task
