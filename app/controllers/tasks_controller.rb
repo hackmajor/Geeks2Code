@@ -22,7 +22,7 @@ class TasksController < ApplicationController
 
   def day_task
     @tasks = Task.order(:due_date)
-    @task_months = @tasks.where('due_date >= ? AND due_date <= ? AND user_id = ?', Time.current.beginning_of_day, Time.current.end_of_day, current_user.id)
+    @task_day = @tasks.where('due_date >= ? AND due_date <= ? AND user_id = ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day, current_user.id)  
   end
 
 
