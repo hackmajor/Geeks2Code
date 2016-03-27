@@ -4,7 +4,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
   config.time_zone = "Pacific Time (US & Canada)"
-  config.serve_static_assets = true
+  onfig.serve_static_files = true
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
