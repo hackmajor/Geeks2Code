@@ -5,6 +5,14 @@ Rails.application.configure do
   config.cache_classes = true
   config.time_zone = "Pacific Time (US & Canada)"
 
+  config.action_mailer.default_url_options = {:host => 'https://my-task-tracker.herokuapp.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "127.0.0.1",
+    :port    => 25,
+    :domain  => 'https://my-task-tracker.herokuapp.com'
+  }
+
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
