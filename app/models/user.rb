@@ -9,7 +9,15 @@ class User < ActiveRecord::Base
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validates :username, presence: true, length: { minimum: 3, maximum: 20}, :uniqueness => { :case_sensitive => false }
 
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png",
+  :storage => :s3,
+  :s3_credentials =>  {
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  },
+  :bucket => ENV['S3_BUCKET_NAME']
+
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   # Virtual attribute for authenticating by either username or email
