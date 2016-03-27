@@ -12,8 +12,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'https://my-task-tracker.herokuapp.com/' }
 
   config.action_mailer.smtp_settings = {
-    :user_name => ENV["SENGRID_USERNAME"],
-    :password => ENV["SENGRID_PASSWORD"],
+    :user_name => ENV["SENDGRID_USERNAME"],
+    :password => ENV["SENDGRID_PASSWORD"],
     :address => 'smtp.sendgrid.net',
     :domain => 'https://my-task-tracker.herokuapp.com/',
     :port => 587,
