@@ -23,6 +23,7 @@ gem 'figaro'
 
 gem 'paperclip', '~> 4.1'
 gem 'aws-sdk'
+gem 'fog'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
