@@ -3,56 +3,97 @@
   <h1 class="center">My Account</h1>
 </header>
 
-<div class="container">
-  <%= bootstrap_devise_error_messages! %>
 
-      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }) do |f| %>
-      <div class="col-md-6">
-        <div class="row">
-            <div class="form-group">
-              <%= f.label :name %>
-              <%= f.text_field :name, class: "form-control" %>
+<section>
+  <div class="container">
+    <%= bootstrap_devise_error_messages! %>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }) do |f| %>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="profile-card">
+          <div class="profile">
+            <%= image_tag current_user.avatar.url, class: "avatar" %>
+            <p><%= current_user.name %></p>
+          </div>
+          <div class="counter">
+            <div class="row">
+              <p class="total">Last Updated at: <br><%= current_user.updated_at.strftime("%B %d, %Y") %></p>
+              <p class="complete"> With us Since:<br><%= current_user.created_at.strftime("%B %d, %Y") %></p>
             </div>
-            <div class="form-group">
-              <%= f.label :username %>
-              <%= f.text_field :username, class: "form-control" %>
+          </div>
+          <div class="button">
+            <button type="submit" class="btn btn-purple" data-toggle="popover" title="Before Hitting Me" data-content="Go to Security and enter your current password">Update</button>
+          </div>
+          <div class="social">
+              <p><%= link_to t('.cancel_my_account', :default => "Cancel my account"), registration_path(resource_name), :data => { :confirm => t('.are_you_sure', :default => "Are you sure?") }, :method => :delete %>.</p>
+              <%= link_to t('.back', :default => 'Back'), :back %>
+          </div>
+        </div>
+      </div>
+
+
+
+
+        <div class="col-md-9 task-list">
+          <ul class="nav display-nav">
+            <li><a href="#personal">Personal Info</a></li>
+            <li><a href="#social">Social</a></li>
+            <li><a href="#security">Security</a></li>
+          </ul>
+          <!-- Display Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane fade" id="personal">
+              <div class="panel panel-default">
+                  <div class="panel-heading">Personal info</div>
+                  <div class="panel-body">
+                    <div class="form-group">
+                        <%= f.label :name %>
+                        <%= f.text_field :name, class: "form-control" %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.label :username %>
+                        <%= f.text_field :username, class: "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :email %>
+                      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.label :avatar %>
+                        <%= f.file_field :avatar, class: "form-control" %>
+                    </div>
+                  </div>
+                </div>
             </div>
-            <div class="form-group">
-              <%= f.label :avatar %>
-              <%= f.file_field :avatar, class: "form-control" %>
+            <div class="tab-pane fade" id="social">
+
             </div>
-            <div class="round-image-50">
-             <p>Your Current Profile: </p><%= image_tag current_user.avatar.url(:thumb) %>
-           </div>
+            <div class="tab-pane fade" id="security">
+              <div class="panel panel-default">
+                  <div class="panel-heading">Password</div>
+                  <div class="panel-body">
+                    <div class="form-group">
+                      <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it', :default => "leave blank if you don't want to change it") %>)</i><br />
+                      <%= f.password_field :password, :autocomplete => "off", :placeholder => "New Password", class: "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :password_confirmation %><br />
+                      <%= f.password_field :password_confirmation, :placeholder => "Confirm New Password", class: "form-control"  %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes') %>)</i>
+                      <%= f.password_field :current_password, :placeholder => "Current Password", class: "form-control" %>
+                    </div>
+                  </div>
+                </div>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-6">
-          <div class="row">
-                <div class="form-group">
-                  <%= f.label :email %>
-                  <%= f.email_field :email, autofocus: true, class: "form-control" %>
-                </div>
-                <div class="form-group">
-                  <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it', :default => "leave blank if you don't want to change it") %>)</i><br />
-                  <%= f.password_field :password, :autocomplete => "off", :placeholder => "New Password", class: "form-control" %>
-                </div>
-                <div class="form-group">
-                  <%= f.label :password_confirmation %><br />
-                  <%= f.password_field :password_confirmation, :placeholder => "Confirm New Password", class: "form-control"  %>
-                </div>
-                <div class="form-group">
-                  <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes') %>)</i>
-                  <%= f.password_field :current_password, :placeholder => "Current Password", class: "form-control" %>
-                </div>
-                <%= f.submit t('.update', :default => "Update"), class: "btn btn-primary" %>
-              <% end %>
-          </div>
-        </div>
+      </div><!--  row -->
 
 
-      <p><%= t('.unhappy', :default => 'Unhappy') %>? <%= link_to t('.cancel_my_account', :default => "Cancel my account"), registration_path(resource_name), :data => { :confirm => t('.are_you_sure', :default => "Are you sure?") }, :method => :delete %>.</p>
-
-      <%= link_to t('.back', :default => 'Back'), :back %>
-
-    </div>
+      <% end %>
+    </div> <!-- Container -->
+</section>
