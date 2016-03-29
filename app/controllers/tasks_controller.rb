@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-
   before_action :check_user, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @tasks = current_user.tasks.paginate(page: params[:page], per_page: 10)
@@ -72,4 +73,15 @@ class TasksController < ApplicationController
         redirect_to tasks_path
       end
     end
+
+    protected
+      def authenticate_user!
+        if user_signed_in?
+
+        else
+          redirect_to new_user_session_path, :notice => 'Please sign in before moving!'
+          ## if you want render 404 page
+          ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+        end
+      end
 end
