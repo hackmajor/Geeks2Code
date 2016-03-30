@@ -1,22 +1,24 @@
 <nav class="navbar navbar-default" role="navigation">
 
     <ul class="nav navbar-nav navbar-left">
-      <li><%= link_to ' Home', root_path, class: "fa fa-home" %></li>
+      <li><%= link_to ' Home', root_path %></li>
       <% if user_signed_in? %>
-      <li><%= link_to ' My Tasks', tasks_path, class: "fa fa-tasks" %></li>
+        <li><%= link_to ' My Tasks', tasks_path %></li>
+      <% else %>
+        <li><a href="https://github.com/Matthew23Smith/Geeks2Code">Github</a></li>
       <% end %>
     </ul>
     <div class="brand">
-      <%= link_to "Task-It", root_path, class: '' %>
+      <%= link_to "Task-It", root_path %>
     </div>
 <div class="collapse navbar-collapse" id="navbar-collapse-1">
   <ul class="nav navbar-nav navbar-right">
     <% if user_signed_in? %>
-      <li><%= link_to ' My Account', edit_user_registration_path, class: "fa fa-cogs" %></li>
-      <li><%= link_to ' Logout', destroy_user_session_path, :method => :delete, class: "fa fa-sign-out" %></li>
+      <li><%= link_to ' My Account', edit_user_registration_path %></li>
+      <li><%= link_to ' Logout', destroy_user_session_path, :method => :delete %></li>
     <% else %>
-      <li><%= link_to ' Sign Up', new_user_session_path, class: "fa fa-user-plus" %></li>
-      <li><%= link_to ' Login', new_user_session_path, class: "fa fa-sign-in"%></li>
+      <li><%= link_to ' Sign Up', new_user_session_path %></li>
+      <li><%= link_to ' Login', new_user_session_path %></li>
     <% end %>
   </ul>
 </div><!-- /.navbar-collapse -->
