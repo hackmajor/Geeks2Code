@@ -141,7 +141,8 @@ header h1 {
     border-bottom: 1px solid #e2e8ea;
     padding: 2em;
   }
-  .profile-card .button .btn {
+  .profile-card .button .btn-primary,
+  .profile-card .button .btn-success {
     margin: 0 auto;
     display: block;
     width: 60%;
@@ -150,6 +151,9 @@ header h1 {
     font-weight: 700;
     border: none;
     background-color: #099fff;
+  }
+  .profile-card .button .btn-success {
+    background-color: #2ecc71;
   }
   .profile-card .button .btn:hover {
     background-color: #006db3;
@@ -302,4 +306,13 @@ padding: 1.5em 0 0.5em 2em;
 }
 .latest-task .body h3 {
   font-size: 15px;
+}
+
+
+
+.form-container {
+  background-color: #fff;
+  color: #555;
+  border-radius: 15px;
+  padding: 4em;
 }

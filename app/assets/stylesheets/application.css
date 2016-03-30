@@ -7,3 +7,12 @@
  *=require twitter-bootstrap-static/bootstrap
  *=require twitter-bootstrap-static/fontawesome
  */
+
+.alert {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 60%;
+}

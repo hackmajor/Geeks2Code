@@ -25,13 +25,23 @@ body {
 // -------------------- Navbar
 
 .brand {
+  width: 100px;
+  text-align: center;
+  margin: auto;
+  font-size: 1.8em;
+  margin-top: 6px;
+  z-index: 0;
+}
+
+.navbar-left {
     position: absolute;
-    width: 100%;
     left: 0;
-    top: 32%;
-    text-align: center;
-    margin: auto;
-    font-size: 1.8em;
+    top: 28%;
+}
+.navbar-right {
+    position: absolute;
+    right: 0;
+    top: 28%;
 }
 .brand a,
 .brand a:hover,
@@ -39,6 +49,13 @@ body {
 .brand a:visited,
 .brand a:active {
   color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: ease 0.5s;
+}
+
+.brand a:hover {
+  color: #555;
   font-weight: 700;
   text-decoration: none;
 }
