@@ -2,10 +2,12 @@
 
     <ul class="nav navbar-nav navbar-left">
       <li><%= link_to 'Home', root_path %></li>
+      <% if user_signed_in? %>
       <li><%= link_to 'My Tasks', tasks_path %></li>
+      <% end %>
     </ul>
     <div class="brand">
-      <%= link_to "Tasking", root_path, class: '' %>
+      <%= link_to "Task-It", root_path, class: '' %>
     </div>
 <div class="collapse navbar-collapse" id="navbar-collapse-1">
   <ul class="nav navbar-nav navbar-right">
