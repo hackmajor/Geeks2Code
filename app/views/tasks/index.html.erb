@@ -25,9 +25,27 @@
           </div>
           <div class="social">
             <ul>
-              <li><i class="fa fa-twitter"></i></li>
-              <li><i class="fa fa-facebook"></i></li>
-              <li><i class="fa fa-instagram"></i></li>
+              <li>
+                <% if current_user.twitter %>
+                  <%= link_to ("<i class='fa fa-twitter'></i>").html_safe, current_user.twitter %>
+                <% else %>
+                  <i class='fa fa-twitter'></i>
+                <% end %>
+              </li>
+              <li>
+                <% if current_user.facebook %>
+                  <%= link_to ('<i class="fa fa-facebook"></i>').html_safe, current_user.facebook %>
+                <% else %>
+                  <i class="fa fa-facebook"></i>
+                <% end %>
+              </li>
+              <li>
+                <% if current_user.instagram %>
+                  <%= link_to ('<i class="fa fa-instagram"></i>').html_safe, current_user.instagram %>
+                <% else %>
+                  <i class="fa fa-instagram"></i>
+                <% end %>
+              </li>
             </ul>
           </div>
 
