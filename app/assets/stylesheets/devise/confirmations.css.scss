@@ -20,3 +20,49 @@ body {
   color: #fff;
   width: 40%
 }
+
+
+// ------------------------------------------------------------
+// -------------------- Navbar
+
+.brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 32%;
+    text-align: center;
+    margin: auto;
+    font-size: 1.8em;
+}
+.brand a,
+.brand a:hover,
+.brand a:link,
+.brand a:visited,
+.brand a:active {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+    width: 50%;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+.navbar-center{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+    height:100%;
+}
+.navbar-nav>li {
+    padding: 0 1em;
+    color: #fff
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}

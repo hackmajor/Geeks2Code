@@ -1,0 +1,215 @@
+// ------------------------------------------------------------
+// -------------------- Navbar
+
+.brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 32%;
+    text-align: center;
+    margin: auto;
+    font-size: 1.8em;
+}
+.brand a,
+.brand a:hover,
+.brand a:link,
+.brand a:visited,
+.brand a:active {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+    width: 50%;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+.navbar-center{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+    height:100%;
+}
+.navbar-nav>li {
+    padding: 0 1em;
+    color: #fff
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+
+
+// ------------------------------------------------------------
+// -------------------- Default Setting & Font Sizes
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  background-color: #dfe5ec;
+ }
+
+.center {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: #fff;
+   width: 40%
+ }
+
+
+
+ // ------------------------------------------------------------
+ // -------------------- Header
+
+header {
+  height: 600px;
+  background-image: asset-data-url('home-bg.png');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+
+}
+header .center h1 {
+  font-size: 5em;
+  text-align: center;
+  padding-bottom: 0.3em;
+  font-style: italic;
+}
+header .center p {
+  font-size: 1.2em;
+  font-weight: 300;
+  text-align: center;
+  word-spacing: 3px;
+}
+.btn-nofull {
+  padding: 0.5em 3em;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: #fff;
+    margin: 0 auto;
+    display: block;
+    width: 28%;
+    margin-top: 3em;
+    transition: ease 0.5s;
+}
+.btn-nofull:hover {
+  background-color: #fff;
+  color: #555;
+}
+header .scroll {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  width: 15px;
+}
+
+
+// ------------------------------------------------------------
+// -------------------- Section 1
+
+.section-1 {
+  padding: 5em 0;
+  background-color: #fff;
+}
+.section-1 .container {
+  width: 60%;
+  text-align: left;
+  line-height: 3em;
+  color: #bdc3c7;
+}
+.section-1 .profile {
+      width: 60%;
+      margin-top: 3em;
+
+}
+.section-1 .profile .chris {
+  width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid purple;
+    float: left;
+}
+.section-1 .profile p {
+      float: left;
+      line-height: 1.8em;
+      padding-left: 2em;
+}
+
+
+
+// ------------------------------------------------------------
+// -------------------- Section 2 "made with love"
+
+.love {
+  background-image: asset-data-url('faces-bg.png');
+  background-position: center;
+  background-size: contain;;
+  background-attachment: fixed;
+  position: relative;
+  padding: 2em;
+  height: 300px;
+}
+
+.love h1 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 4em;
+    text-shadow: 10px 7px 73px #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    width: 70%;
+}
+.love i {
+    color: red;
+}
+.love h1 a {
+    color: #fff;
+}
+
+
+// ------------------------------------------------------------
+// -------------------- Section 3 Features
+
+.features {
+    padding: 5em 0;
+}
+.features .container {
+      width: 70%;
+}
+.features .col-md-2 {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    position: relative;
+    top: 9em;
+}
+.features .col-md-10 {
+    line-height: 2.5em;
+}
+.features .col-md-10 h1 {
+      padding-bottom: 1em;
+}
+.features .col-md-10 p {
+      font-size: 1.2em;
+}
+.features .quote {
+  border-left: solid 2px red;
+  padding-left: 2em;
+  margin: 2em 0;
+  font-size: 1.8em !important;
+  line-height: 2em;
+
+}

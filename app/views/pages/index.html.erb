@@ -1,10 +1,52 @@
-<div>
-  <h1 class="jumbotron">Welcome</h1>
-</div>
+<header>
+    <%= render "shared/main_nav" %>
+    <div class="container">
+      <div class="row">
+        <div class="center">
+          <h1>HELLO TASKER</h1>
+          <p>Welcome to Tasking, Add your task, group it, do it!</p>
+          <%= link_to "Sign Up", new_user_session_path, class: 'btn btn-nofull' %>
+        </div>
+        <%= image_tag 'scroll.png', class: "scroll" %>
+      </div>
+    </div>
+</header>
 
-<div class="col-sm-9">
-  <div class="container-fluid text-center">
-    <%= link_to "Enter", tasks_path, class: "btn btn-success btn-lg" %>
-    <%= link_to "account", edit_user_registration_path, class: "btn btn-success btn-lg" %>
+<section class="section-1">
+  <div class="container">
+    <div class="row">
+      <p>Yes, except the Dave Matthews Band doesn't rock. There's one way and only one way to determine if an animal is intelligent. Dissect its brain! It's just like the story of the grasshopper and the octopus. All year long, the grasshopper kept burying acorns for winter, while the octopus mooched off his girlfriend and watched TV.<br>
+  But then the winter came, and the grasshopper died, and the octopus ate all his acorns. Bender, we're trying our best. Aww, it's true. I've been hiding it for so long.</p>
+    <div class="profile">
+      <%= image_tag 'chris.jpg', alt: 'Chris in Car', class: 'chris' %>
+      <p>Chris Rodriguez<br>
+        Web Develper, Designer<br>
+        @chris</p>
+    </div>
+    </div>
+
   </div>
-</div>
+</section>
+
+<section class="love">
+  <h1 class="center">Made with <i class="fa fa-heart"></i> by <a href="http://geeks2code.com/">Geeks2Code</a></h1>
+</section>
+
+<section class="features">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-2">
+        <p>Facts are meaningless. You could use facts to prove anything that's even remotely true!</p>
+      </div>
+      <div class="col-md-10">
+        <h1>FEATURES</h1>
+        <p>Haven't you learned anything from that guy who gives those sermons at church? Captain Whatshisname? We live in a society of laws! Why do you think I took you to all those Police Academy movies? For fun? Well, I didn't hear anybody laughing, did you? Except at that guy who made sound effects. </p>
+        <p class="quote">
+          Books are useless! I only ever read one book, "To Kill A Mockingbird," and it gave me absolutely no insight on how to kill mockingbirds!
+        </p>
+        <p>Makes sound effects and laughs. Where was I? Oh yeah! Stay out of my booze. Weaseling out of things is important to learn. It's what separates us from the animals…except the weasel. Weaseling out of things is important to learn.</p>
+      </div>
+    </div>
+  </div>
+</section>
