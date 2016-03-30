@@ -5,9 +5,9 @@ class TasksController < ApplicationController
 
 
   def index
-    @tasks = current_user.tasks.paginate(page: params[:page], per_page: 10)
-    @complete_task = current_user.tasks.where(status: true).paginate(page: params[:page], per_page: 10)
-    @incomplete_task = current_user.tasks.where(status: false).paginate(page: params[:page], per_page: 10)
+    @tasks = current_user.tasks
+    @complete_task = current_user.tasks.where(status: true)
+    @incomplete_task = current_user.tasks.where(status: false)
     @tasks_order = Task.order(:due_date)
     @task_week = @tasks_order.where('due_date >= ? AND due_date <= ? AND user_id = ?', Time.current.beginning_of_week, Time.current.end_of_week, current_user.id)
     @task_day = @tasks_order.where('due_date >= ? AND due_date <= ? AND user_id = ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day, current_user.id)

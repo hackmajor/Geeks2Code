@@ -3,9 +3,11 @@
     <div class="container">
       <div class="row">
         <div class="center">
-          <h1>HELLO TASKER</h1>
-          <p>Welcome to Tasking, Add your task, group it, do it!</p>
+          <h1>HELLO TASKERS</h1>
+          <center><h3>Welcome to Task-It!</h3></center> <br> <p>Add your task, group it, do it!</p>
+          <% if !user_signed_in? %>
           <%= link_to "Sign Up", new_user_session_path, class: 'btn btn-nofull' %>
+          <% end %>
         </div>
         <%= image_tag 'scroll.png', class: "scroll" %>
       </div>
@@ -15,8 +17,7 @@
 <section class="section-1">
   <div class="container">
     <div class="row">
-      <p>Yes, except the Dave Matthews Band doesn't rock. There's one way and only one way to determine if an animal is intelligent. Dissect its brain! It's just like the story of the grasshopper and the octopus. All year long, the grasshopper kept burying acorns for winter, while the octopus mooched off his girlfriend and watched TV.<br>
-  But then the winter came, and the grasshopper died, and the octopus ate all his acorns. Bender, we're trying our best. Aww, it's true. I've been hiding it for so long.</p>
+      <p>Since I was a teenager, I’ve had a love for computers. I’d dabble in HTML and wonder what else the world had as far as coding was concerned. Now that I’m learning Ruby on Rails, I need something to keep me on task. With this web app, keeping track of my progress will be a breeze. Whether you’re following your heart, diving deep in code, or you just need to manage your everyday tasks at home, you’ve found the right place to <strong>Task-It</strong>.</p>
     <div class="profile">
       <%= image_tag 'chris.jpg', alt: 'Chris in Car', class: 'chris' %>
       <p>Chris Rodriguez<br>
@@ -37,15 +38,22 @@
     <div class="row">
 
       <div class="col-md-2">
-        <p>Facts are meaningless. You could use facts to prove anything that's even remotely true!</p>
+        <p>Organize your Tasks by All, Week, Complete, and Incomplete!</p>
       </div>
       <div class="col-md-10">
         <h1>FEATURES</h1>
-        <p>Haven't you learned anything from that guy who gives those sermons at church? Captain Whatshisname? We live in a society of laws! Why do you think I took you to all those Police Academy movies? For fun? Well, I didn't hear anybody laughing, did you? Except at that guy who made sound effects. </p>
+        <p>Keep track of your tasks with multiple features. Reorganize your tasks in multiple ways, including by All Tasks, This Week's Tasks, Complete Tasks, and Incomplete Tasks. Account features allow users to update current email and change their current password for added security. Task-It’s authentication system keeps user’s tasks and account information safe by preventing access by using state of the art hashed passwords. As Task-It grows, it’ll definitely grow on you, too.</p>
         <p class="quote">
-          Books are useless! I only ever read one book, "To Kill A Mockingbird," and it gave me absolutely no insight on how to kill mockingbirds!
-        </p>
-        <p>Makes sound effects and laughs. Where was I? Oh yeah! Stay out of my booze. Weaseling out of things is important to learn. It's what separates us from the animals…except the weasel. Weaseling out of things is important to learn.</p>
+          I was completely lost before I found <strong>Task-It</strong>. Now I can keep track of all of my tasks with ease! <strong>I love Task-It!</strong><br> - Elise Rodriguez <small>(Current Task-It User)</small>
+        </p><br>
+        <% if !user_signed_in? %>
+        <div>
+        <center>
+          <p>With <strong>Task-It</strong>, it's easy to get started. Just click "Sign-Up" and you'll be Tasking in no time!</p>
+          <%= link_to "Sign Up", new_user_session_path, class: 'btn btn-success' %>
+        </center>
+        </div>
+        <% end %><br><br><br><br>
       </div>
     </div>
   </div>
