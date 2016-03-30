@@ -8,9 +8,8 @@ class User < ActiveRecord::Base
   # Only allow letter, number, underscore and punctuation for the user name.
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validates :username, presence: true, length: { minimum: 3, maximum: 20}, :uniqueness => { :case_sensitive => false }
-
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/missing.png"
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  validates :avatar, presence: true
+  mount_uploader :avatar, AvatarUploader
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
