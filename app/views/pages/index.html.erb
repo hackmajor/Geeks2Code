@@ -45,13 +45,15 @@
         <p>Keep track of your tasks with multiple features. Reorganize your tasks in multiple ways, including by All Tasks, This Week's Tasks, Complete Tasks, and Incomplete Tasks. Account features allow users to update current email and change their current password for added security. Task-It’s authentication system keeps user’s tasks and account information safe by preventing access by using state of the art hashed passwords. As Task-It grows, it’ll definitely grow on you, too.</p>
         <p class="quote">
           I was completely lost before I found <strong>Task-It</strong>. Now I can keep track of all of my tasks with ease! <strong>I love Task-It!</strong><br> - Elise Rodriguez <small>(Current Task-It User)</small>
-        </p>
+        </p><br>
         <% if !user_signed_in? %>
         <div>
-        <p>With <strong>Task-It</strong>, it's easy to get started. Just click "Sign-Up" and you'll be Tasking in no time!</p>
-        <center><%= link_to "Sign Up", new_user_session_path, class: 'btn btn-success' %></center>
+        <center>
+          <p>With <strong>Task-It</strong>, it's easy to get started. Just click "Sign-Up" and you'll be Tasking in no time!</p>
+          <%= link_to "Sign Up", new_user_session_path, class: 'btn btn-success' %>
+        </center>
         </div>
-        <% end %>
+        <% end %><br><br><br><br>
       </div>
     </div>
   </div>
