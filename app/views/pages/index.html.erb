@@ -6,7 +6,7 @@
           <% if !user_signed_in? && !current_user %>
             <h1>HELLO TASKER</h1>
             <br><p>Welcome to Task-it, Add your task, group it, do it!</p>
-            <%= link_to "Sign Up", new_user_session_path, class: 'btn btn-nofull' %>
+            <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-nofull' %>
           <% else %>
             <h1>Hello <%= current_user.name.partition(" ").first %></h1>
             <br><p>You still have <%=  current_user.tasks.where(status: false).count %> Tasks to do!</p>
@@ -54,7 +54,7 @@
         <div>
         <center>
           <p>With <strong>Task-It</strong>, it's easy to get started. Just click "Sign-Up" and you'll be Tasking in no time!</p>
-          <%= link_to "Sign Up", new_user_session_path, class: 'btn btn-success' %>
+          <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success' %>
         </center>
         </div>
         <% end %><br><br><br><br>
