@@ -13,11 +13,23 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to " Home", root_path%></li>
-        <li><%= link_to " Tasks", tasks_path %></li>
-        <li><%= link_to " My Account", edit_user_registration_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to " Tasks", tasks_path %></li>
+          <li><%= link_to " My Account", edit_user_registration_path %></li>
+        <% else %>
+          <li><a href="https://github.com/Matthew23Smith/Geeks2Code">Github</a></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
+
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "LOGOUT", destroy_user_session_path, :method => :delete, class: 'logout' %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "LOGOUT", destroy_user_session_path, :method => :delete, class: 'logout' %></li>
+        <% else %>
+          <li><%= link_to "LOGIN", new_user_session_path, class: 'logout' %></li>
+        <% end %>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -1,19 +1,15 @@
 
 <header>
   <%= render "shared/task_nav" %>
-  <h1 class="center">My Account</h1>
+  <h1 class="center">Sign Up</h1>
 </header>
 
-<div class="col col-lg-2">
-</div>
-
-<div class="col col-lg-6">
-
+<br><br><br><br><br>
 <div class="container" background="grey">
   <%= bootstrap_devise_error_messages! %>
   <div class="panel panel-default devise-bs">
     <div class="panel-heading">
-      <h4><%= t('.sign_up', :default => "Sign up") %></h4>
+      <h3><%= t('.sign_up', :default => "Sign up") %></h3>
     </div>
     <div class="panel-body">
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form", :multipart => true }) do |f| %>
@@ -53,15 +49,10 @@
           <font color="black"><%= f.label :password_confirmation %></font>
           <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Your New Password" %>
         </div><br><br>
-        <%= f.submit t('.sign_up', :default => "Sign Up"), class: "btn btn-block btn-lg btn-success" %>
+        <%= f.submit t('.sign_up', :default => "Sign Up"), class: "btn btn-lg btn-success" %>
       <% end %>
     </div>
   </div>
   <%= render "devise/shared/links" %>
 
 </div><br><br><br><br><br>
-
-</div>
-
-<div class="col cold-lg-4">
-</div>
