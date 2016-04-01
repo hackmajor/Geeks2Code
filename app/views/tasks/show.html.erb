@@ -25,6 +25,8 @@
             <%= link_to "New Task", new_task_path, class: "btn btn-success" %>
             <br>
             <%= link_to "Return to Tasks", tasks_path, class: "btn btn-primary" %>
+            <br>
+            <p>Share you Task: <%= social_share_button_tag(@task.name, :image => "https://s3.amazonaws.com/profiletask/IMG_0016.JPG", desc: "Sharing My Task", via: "Task-It", :url => "https://my-task-tracker.herokuapp.com/") %></p>
           </div>
           <div class="social">
             <ul>

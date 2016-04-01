@@ -23,6 +23,8 @@
             <%= link_to "My Account", edit_user_registration_path, class: "btn btn-primary" %>
             <br>
             <%= link_to "New Task", new_task_path, class: "btn btn-success" %>
+            <br>
+            <p>Share you Task: <%= social_share_button_tag(@task.name, :image => "https://s3.amazonaws.com/profiletask/IMG_0016.JPG", desc: "Sharing My Task", via: "Task-It", :url => "https://my-task-tracker.herokuapp.com/", 'data-twitter-title' => 'Sharing My Task', 'data-facebook-title' => 'Sharing My Task') %></p>
           </div>
           <div class="social">
             <ul>

@@ -6,6 +6,7 @@
  *= require_self
  *=require twitter-bootstrap-static/bootstrap
  *=require twitter-bootstrap-static/fontawesome
+ *= require social-share-button
  */
 
 .alert {
