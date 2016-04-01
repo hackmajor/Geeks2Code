@@ -57,10 +57,14 @@
 
           <div class="latest-task">
             <div class="title">
-              <p>LATEST TASK: &nbsp;&nbsp;&nbsp;&nbsp;<%= current_user.tasks.last.due_date.strftime("%B %d, %Y") %> </p>
+              <% if current_user.tasks %>
+                <p>LATEST TASK: &nbsp;&nbsp;&nbsp;&nbsp;<%= current_user.tasks.last.due_date.strftime("%B %d, %Y") %> </p>
+              <% end %>
             </div>
             <div class="body">
-              <h4><%= current_user.tasks.last.name %></h4>
+              <% if current_user.tasks %>
+                <h4><%= current_user.tasks.last.name %></h4>
+              <% end %>
             </div>
           </div>
         </div>
