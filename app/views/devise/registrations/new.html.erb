@@ -3,7 +3,13 @@
   <%= render "shared/task_nav" %>
   <h1 class="center">My Account</h1>
 </header>
-<div class="container">
+
+<div class="col col-lg-2">
+</div>
+
+<div class="col col-lg-6">
+
+<div class="container" background="grey">
   <%= bootstrap_devise_error_messages! %>
   <div class="panel panel-default devise-bs">
     <div class="panel-heading">
@@ -12,45 +18,50 @@
     <div class="panel-body">
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form", :multipart => true }) do |f| %>
         <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, class: "form-control" %>
+          <font color="black"><%= f.label :name %></font>
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter Your Name" %>
         </div>
         <div class="form-group">
-          <%= f.label :username %>
-          <%= f.text_field :username, class: "form-control" %>
+          <font color="black"><%= f.label :username %></font>
+          <%= f.text_field :username, class: "form-control", placeholder: "Create Your Username" %>
         </div>
         <div class="form-group">
-          <%= f.label :avatar %>
+          <font color="black"><%= f.label :avatar %></font>
           <%= f.file_field :avatar, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :facebook %>
-          <%= f.text_field :facebook, class: "form-control", placeholder: 'Place the full url' %>
+          <font color="black"><%= f.label :facebook %></font>
+          <%= f.text_field :facebook, class: "form-control", placeholder: "Enter Full Facebook URL" %>
         </div>
         <div class="form-group">
-          <%= f.label :twitter %>
-          <%= f.text_field :twitter, class: "form-control", placeholder: 'Place the full url' %>
+          <font color="black"><%= f.label :twitter %></font>
+          <%= f.text_field :twitter, class: "form-control", placeholder: "Enter Full Twitter URL" %>
         </div>
         <div class="form-group">
-          <%= f.label :instagram %>
-          <%= f.text_field :instagram, class: "form-control", placeholder: 'Place the full url' %>
+          <font color="black"><%= f.label :instagram %></font>
+          <%= f.text_field :instagram, class: "form-control", placeholder: "Enter Full Instagram URL" %>
         </div>
         <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          <font color="black"><%= f.label :email %></font>
+          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter Your Email Address"%>
         </div>
         <div class="form-group">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, class: "form-control" %>
+          <font color="black"><%= f.label :password %></font><br />
+          <%= f.password_field :password, class: "form-control", placeholder: "Create A New Password" %>
         </div>
         <div class="form-group">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: "form-control" %>
-        </div>
-        <%= f.submit t('.sign_up', :default => "Sign up"), class: "btn btn-primary" %>
+          <font color="black"><%= f.label :password_confirmation %></font>
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Your New Password" %>
+        </div><br><br>
+        <%= f.submit t('.sign_up', :default => "Sign Up"), class: "btn btn-block btn-lg btn-success" %>
       <% end %>
     </div>
   </div>
   <%= render "devise/shared/links" %>
 
+</div><br><br><br><br><br>
+
+</div>
+
+<div class="col cold-lg-4">
 </div>
